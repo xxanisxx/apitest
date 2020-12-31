@@ -27,7 +27,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  *          },
  *          "put",
  *          "patch",
- *          "delete"
+ *          "delete",
  *     }
  * )
  */

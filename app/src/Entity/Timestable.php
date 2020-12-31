@@ -8,11 +8,13 @@ trait Timestable
 {
      /**
      * @ORM\Column(type="datetime")
+     * @Groups({"article_read","user_read", "user_detail_read", "article_detail_read"})
      */
     private \DateTimeInterface $createdAt;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
+     * @Groups({"article_read","user_read", "user_detail_read", "article_detail_read"})
      */
     private ?\DateTimeInterface $updatedAt;
 
