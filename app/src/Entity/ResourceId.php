@@ -12,10 +12,11 @@ trait ResourceId
      * @ORM\Column(type="integer")
      * @Groups({"article_read","user_read", "user_detail_read", "article_detail_read"})
      */
-    private int $id;
+    private $id;
 
     public function getId(): ?int
     {
         return $this->id;
     }
+
 }

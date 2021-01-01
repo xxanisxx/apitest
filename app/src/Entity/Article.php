@@ -6,7 +6,9 @@ use Doctrine\ORM\Mapping as ORM;
 use App\Controller\ArticleUpdatedAt;
 use App\Repository\ArticleRepository;
 use ApiPlatform\Core\Annotation\ApiResource;
+use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
 
 /**
@@ -55,7 +57,7 @@ class Article
      * @ORM\JoinColumn(nullable=false)
      * @Groups({"article_detail_read"})
      */
-    private $author;
+    private UserInterface $author;
 
     public function __construct()
     {
@@ -91,12 +93,12 @@ class Article
         return $this;
     }
 
-    public function getAuthor(): ?User
+    public function getAuthor(): ?UserInterface
     {
         return $this->author;
     }
 
-    public function setAuthor(?User $author): self
+    public function setAuthor(?UserInterface $author): self
     {
         $this->author = $author;
 
